@@ -23,6 +23,7 @@ export default function ProfileScreen({ setToken }) {
   const [photo, setPhoto] = useState("");
   const [selectedPicture, setSelectedPicture] = useState();
 
+  //Access to pictures gallery, handling of picture or error if access is refused
   const getPermissionAndGetPicture = async () => {
     try {
       const { status } =
@@ -47,6 +48,7 @@ export default function ProfileScreen({ setToken }) {
     }
   };
 
+  //Access to camera, handling of picture or error if access is refused
   const getPermissionAndTakePicture = async () => {
     try {
       const { status } = await ImagePicker.requestCameraPermissionsAsync();
@@ -67,7 +69,12 @@ export default function ProfileScreen({ setToken }) {
     }
   };
 
+  // Submit of profile update
   const handleSubmit = async () => {
+    if (!email || !username || !description) {
+      alert("Please fill all fields");
+      return;
+    }
     setIsLoading(true);
     try {
       if (selectedPicture) {

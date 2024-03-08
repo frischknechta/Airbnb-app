@@ -33,10 +33,12 @@ Sign in and sign up screens.
 
 Screens available once user is logged.
 
+<p>
 <img src="./assets/Home.png" width="220" />
 <img src="./assets/Room.png" width="220" />
 <img src="./assets/AroundMe.png" width="220" />
 <img src="./assets/Profile.png" width="220" />
+</p>
 
 ---
 
